@@ -1,0 +1,4 @@
+<StackLayout class="p-4">
+    <Label text="{{ errorMessage }}" class="text-red-500 text-lg text-center" textWrap="true" />
+    <Button text="Try Again" tap="{{ onRetry }}" class="bg-blue-500 text-white mt-4" />
+</StackLayout>

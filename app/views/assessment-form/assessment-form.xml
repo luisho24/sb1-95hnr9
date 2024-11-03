@@ -1,0 +1,50 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ 'assessment.newAssessment' | L }}" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <TextField hint="{{ 'assessment.age' | L }}" 
+                      text="{{ form.age }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <TextField hint="{{ 'assessment.bloodPressure.systolic' | L }}" 
+                      text="{{ form.systolicBP }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <TextField hint="{{ 'assessment.bloodPressure.diastolic' | L }}" 
+                      text="{{ form.diastolicBP }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <TextField hint="{{ 'assessment.bloodSugar' | L }}" 
+                      text="{{ form.bloodSugar }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <TextField hint="{{ 'assessment.temperature' | L }}" 
+                      text="{{ form.temperature }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <TextField hint="{{ 'assessment.heartRate' | L }}" 
+                      text="{{ form.heartRate }}" 
+                      keyboardType="number" 
+                      class="input mb-4" />
+            
+            <Label text="{{ validationError }}" 
+                   class="text-red-500 mb-4" 
+                   visibility="{{ validationError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Button text="{{ 'common.save' | L }}" 
+                    tap="{{ onSave }}" 
+                    class="btn btn-primary mb-2" />
+            
+            <Button text="{{ 'common.cancel' | L }}" 
+                    tap="{{ onCancel }}" 
+                    class="btn btn-secondary" />
+        </StackLayout>
+    </ScrollView>
+</Page>

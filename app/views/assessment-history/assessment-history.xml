@@ -1,0 +1,31 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ 'assessment.history' | L }}">
+        <ActionItem 
+            ios.position="right" 
+            android.position="actionBar"
+            tap="{{ onNewAssessment }}">
+            <Label text="+" class="fas text-2xl" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout>
+        <ListView items="{{ assessments }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="*, auto" class="list-group-item p-4">
+                    <StackLayout col="0">
+                        <Label text="{{ date, 'dd/MM/yyyy HH:mm' }}" class="text-sm text-gray-500" />
+                        <Label text="{{ 'assessment.risk.' + riskLevel | L }}" 
+                               class="{{ 'font-bold ' + (riskLevel === 'high' ? 'text-red-500' : 
+                                                        riskLevel === 'medium' ? 'text-yellow-500' : 
+                                                        'text-green-500') }}" />
+                    </StackLayout>
+                    <Label col="1" 
+                           text="›" 
+                           class="text-2xl text-gray-400" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <ActivityIndicator busy="{{ isLoading }}" />
+    </GridLayout>
+</Page>
